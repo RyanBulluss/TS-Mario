@@ -1,7 +1,7 @@
 const startingBoard = {
   x: 0,
   y: 0,
-  height: 600,
+  height: 800,
   width: 800,
   color: "lightblue",
 };
@@ -29,4 +29,14 @@ const startingPlayer = {
   },
 };
 
-export { startingBoard, startingFloor, startingPlayer };
+const startingBlocks = [
+  {
+    x: startingFloor.width - 300,
+    y: startingFloor.y - 300,
+    height: 300,
+    width: 300,
+    color: "brown",
+  }
+]
+
+export { startingBoard, startingFloor, startingPlayer, startingBlocks };
