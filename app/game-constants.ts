@@ -17,6 +17,7 @@ const startingFloor = {
 const startingPlayer = {
   x: startingBoard.width / 3,
   y: 0,
+  xSpeed: 0,
   ySpeed: 0,
   height: 60,
   width: 30,
@@ -33,10 +34,31 @@ const startingBlocks = [
   {
     x: startingFloor.width - 300,
     y: startingFloor.y - 300,
-    height: 300,
-    width: 300,
+    height: 50,
+    width: 50,
     color: "brown",
-  }
-]
+  },
+];
 
-export { startingBoard, startingFloor, startingPlayer, startingBlocks };
+function createStairs(num: number) {
+  let arr = [];
+  let y = 50;
+  let x = 300;
+  for (let i = 0; i < num; i++) {
+    if (num % i === 0) {
+      y += 50;
+      x = 300;
+    } else x -= 50
+
+    arr.push({
+      x: startingFloor.width - x,
+      y: startingFloor.y - y,
+      height: 50,
+      width: 50,
+      color: "brown",
+    });
+  }
+  return arr;
+}
+
+export { startingBoard, startingFloor, startingPlayer, startingBlocks, createStairs };
