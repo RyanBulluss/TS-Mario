@@ -42,10 +42,10 @@ const startingBlocks = [
 
 function createStairs(num: number) {
   let arr = [];
-  let y = 50;
+  let y = 0;
   let x = 300;
-  for (let i = 0; i < num; i++) {
-    if (num % i === 0) {
+  for (let i = 1; i < num + 1; i++) {
+    if (5 % i === 0) {
       y += 50;
       x = 300;
     } else x -= 50

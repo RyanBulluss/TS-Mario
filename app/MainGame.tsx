@@ -13,7 +13,7 @@ const MainGame = () => {
   const [board, setBoard] = useState(startingBoard);
   const [floor, setFloor] = useState(startingFloor);
   const [player, setPlayer] = useState(startingPlayer);
-  const [blocks, setBlocks] = useState(createStairs(5));
+  const [blocks, setBlocks] = useState(createStairs(8));
 
   function drawPiece(context: any, piece: any) {
     context.fillStyle = piece.color;
@@ -61,10 +61,14 @@ const MainGame = () => {
       if (event.key === "a" || event.key === "d") {
         setPlayer({
           ...player,
-          xSpeed: 0, // Stop movement when key is released
+          xSpeed: 0,
         });
       }
     };
+
+    function checkBoundaries(direction: string) {
+ 
+    }
 
 
     function movePlayer() {
